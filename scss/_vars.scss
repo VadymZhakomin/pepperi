@@ -1,0 +1,227 @@
+
+
+//! Layouts
+$screen-2xl: 1464px;
+$screen-xl: 1280px;
+$screen-lg: 960px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-xs: 480px;
+
+// When smaller
+@mixin mQ-max($width-number) {
+    @media screen and (max-width: $width-number) {
+        @content;
+    }
+}
+
+// When bigger
+@mixin mQ-min($width-number) {
+    @media screen and (min-width: $width-number) {
+        @content;
+    }
+}
+
+@mixin inline($color: transparent, $width: 1px, $style: solid) {
+    // 👆 Requires parent element to be 'position: relative;'
+    &:after {
+        content: "";
+        transition: all 0.25s;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: inherit;
+        border: $width $style $color;
+    }
+}
+
+@mixin main-padding {
+    padding-left: calc(max(4rem, env(safe-area-inset-left)));
+    padding-right: calc(max(4rem, env(safe-area-inset-right)));
+    @include mQ-max ($screen-md) {
+        padding-left: calc(max(3rem, env(safe-area-inset-left)));
+        padding-right: calc(max(3rem, env(safe-area-inset-right)));
+    }
+    @include mQ-max ($screen-sm) {
+        padding-left: calc(max(2rem, env(safe-area-inset-left)));
+        padding-right: calc(max(2rem, env(safe-area-inset-right)));
+    }
+    @include mQ-max ($screen-xs) {
+        padding-left: calc(max(1rem, env(safe-area-inset-left)));
+        padding-right: calc(max(1rem, env(safe-area-inset-right)));
+    }
+}
+
+//! Shadows
+$shadow-box-focus-hover: 0 0 0 4px rgba(23, 102, 166, 0.25),
+    00 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+$shadow-box-focus: 0 0 0 4px rgba(23, 102, 166, 0.25);
+$shadow-box-soft: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04);
+$shadow-box-soft-hover: 0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+$shadow-box: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+$shadow-box-hover: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.16);
+
+//! Colors
+$color-system-1-full: rgb(10, 10, 10);
+$color-system-2-dimmed: rgba(10, 10, 10, 0.7);
+$color-system-3-dim: rgba(10, 10, 10, 0.16);
+$color-system-4-weak: rgba(10, 10, 10, 0.08);
+
+$color-system-invert-1-full: rgb(256, 256, 256);
+$color-system-invert-2-dimmed: rgba(256, 256, 256, 0.7);
+$color-system-invert-3-dim: rgba(256, 256, 256, 0.25);
+$color-system-invert-4-weak: rgba(256, 256, 256, 0.08);
+
+$color-primary: #1a1a1a;
+$color-success: green;
+$color-caution: red;
+$color-link: #1766a6;
+$color-brand: #93c90e;
+$color-green-main: #5d8009;
+$color-brand-50: transparentize($color-brand, 0.75);
+$color-brand-25: transparentize($color-brand, 0.84);
+
+:root {
+    --color-main-bg: #f7f7f7;
+}
+
+//! Grad
+@mixin linear-gradient($deg, $clr, $int, $end) {
+    background: linear-gradient($deg, rgba($clr, $int) 0%, rgba($clr, 0) $end);
+}
+
+//! Interface Size
+:root {
+    --header-height: 64px;
+}
+$header-height: var(--header-height);
+$border-radius: 4px;
+$box-height: 160px;
+$box-height-overlay: 40px;
+
+// ! State styles
+@mixin state-strong {
+    color: $color-system-invert-1-full;
+    background: $color-system-1-full;
+    border-radius: $border-radius;
+    box-shadow: $shadow-box;
+    font-weight: 600;
+    padding: 0.7em 1em;
+    transition: box-shadow ease-in-out 0.15s, transform ease-in-out 0.35s;
+    &:hover {
+        box-shadow: $shadow-box-hover;
+        transform: translateY(-1px);
+    }
+    &:active,
+    &:focus {
+        box-shadow: $shadow-box-focus;
+    }
+    &:active {
+        transform: unset;
+    }
+}
+
+@mixin state-weak {
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    padding: 0.35em 0.7em;
+    align-self: center;
+    background-color: $color-system-4-weak;
+    color: $color-system-1-full;
+    transition: box-shadow ease-in-out 0.15s, background-color ease-in-out 0.25s;
+    &:hover {
+        background-color: $color-system-3-dim;
+    }
+    &:active,
+    &:focus {
+        box-shadow: $shadow-box-focus;
+    }
+    .start-icon {
+        margin-inline-end: 0.25em;
+    }
+    .end-icon {
+        margin-inline-start: 0.25em;
+    }
+}
+
+@mixin state-weak-invert {
+    background-color: $color-system-invert-3-dim;
+    border-radius: $border-radius;
+    transition: background-color ease-in-out 0.25s,
+        box-shadow ease-in-out 0.125s;
+    &:hover {
+        background-color: $color-system-invert-2-dimmed;
+    }
+    &:active,
+    &:focus {
+        box-shadow: $shadow-box-focus;
+    }
+}
+@mixin state-regular {
+    background: white;
+    border-radius: $border-radius;
+    @include inline($color-system-2-dimmed);
+    // border: 1px solid $color-system-2-dimmed;
+    box-shadow: $shadow-box-soft;
+    transition: all ease-in-out 0.15s;
+    &:hover {
+        border-color: $color-system-1-full;
+        box-shadow: $shadow-box-soft-hover;
+    }
+    &:active,
+    &:focus {
+        @include inline($color-system-1-full);
+        // border: 1px solid $color-system-1-full;
+        box-shadow: $shadow-box-focus;
+    }
+}
+@mixin clickable-image-base {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0;
+    border-radius: $border-radius;
+    transition: box-shadow ease-in-out 0.2s, transform ease-in-out 0.3s;
+    &:hover {
+        box-shadow: $shadow-box-hover;
+        transform: scale(1.015);
+    }
+    &:active,
+    &:focus {
+        box-shadow: $shadow-box-focus-hover;
+    }
+}
+
+@mixin hidden-on($size) {
+    @media screen and (max-width: $size) {
+        display: none !important;
+    }
+}
+
+@mixin shown-on($size) {
+    @media screen and (min-width: $size) {
+        display: none !important;
+    }
+}
+@mixin flex($justify:flex-start, $align:flex-start, $wrap:nowrap, $direction:row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}
+@mixin bg($size:cover, $repeat:no-repeat, $position:center) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}

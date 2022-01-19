@@ -1,0 +1,158 @@
+@import "./vars";
+
+// .show {
+//     display: inline-block !important;
+// }
+// .hide {
+//     display: none !important;
+// }
+
+// .hidden-on-mobile {
+//     @media screen and (max-width: $screen-md) {
+//         display: none !important;
+//     }
+// }
+
+// .shown-on-mobile {
+//     @media screen and (min-width: $screen-md) {
+//         display: none !important;
+//     }
+// }
+// .hidden-on-tablet {
+//     @media screen and (max-width: $screen-lg) {
+//         display: none !important;
+//     }
+// }
+
+// .shown-on-tablet {
+//     @media screen and (min-width: $screen-lg) {
+//         display: none !important;
+//     }
+// }
+// .hidden-on-web {
+//     @media screen and (max-width: $screen-xl) {
+//         display: none !important;
+//     }
+// }
+
+// .shown-on-web {
+//     @media screen and (min-width: $screen-xl) {
+//         display: none !important;
+//     }
+// }
+
+@mixin svg-in-button {
+    svg {
+        fill: $color-system-1-full;
+        fill-opacity: 0.6;
+        transition: fill-opacity ease-in-out 0.25s;
+        &:hover {
+            fill-opacity: 1;
+        }
+    }
+}
+@mixin svg-in-button-invert {
+    svg {
+        fill-opacity: 0.8;
+        fill: $color-system-invert-1-full;
+    }
+}
+hr {
+    border: 0;
+    border-top: 1px solid $color-system-3-dim;
+    width: 100%;
+    margin: 0;
+}
+
+button {
+    position: relative;
+    white-space: nowrap;
+}
+
+// Strong button
+
+.btn-strong {
+    @include state-strong;
+}
+.btn-strong-invert {
+    @include state-strong;
+    color: $color-system-1-full;
+    background: $color-system-invert-1-full;
+}
+
+// Regular button
+
+.btn-regular {
+    @include state-regular;
+    font-size: var(--font-size-1-small);
+    font-weight: 600;
+    height: 2.5rem;
+    color: $color-system-1-full;
+    padding: 0 4rem;
+    align-self: center;
+}
+
+// Weak button
+
+.btn-weak {
+    @include state-weak;
+}
+.btn-chip {
+    @include state-weak;
+    padding: 0 0.8em !important;
+    height: 1.5rem !important;
+    border-radius: 0.725rem !important;
+    &.active {
+        @include state-regular;
+    }
+}
+
+.btn-chip-big {
+    @include state-weak;
+    @include inline;
+    padding: 0 1.5em !important;
+    height: 3.25rem !important;
+    border-radius: 1.625rem !important;
+    font-size: var(--font-size-1-small);
+    font-weight: var(--font-weight--bold);
+    text-align: center;
+    span{
+        width: 100%;
+        margin-inline-end: 1rem;
+    }
+    svg {
+        position: absolute;
+        right: 0.5rem;
+        fill: $color-system-1-full;
+        fill-opacity: 0.6;
+        transition: fill-opacity ease-in-out 0.25s;
+    }
+    &:hover {
+        @include inline($color-system-2-dimmed);
+        box-shadow: $shadow-box-soft-hover;
+        svg{
+            fill-opacity: 1;
+        }
+    }
+    &:active{
+        box-shadow: $shadow-box-focus;
+    }
+}
+.btn-HL {
+    background-color: $color-brand-25;
+    &:hover {
+        background-color: $color-brand-50;
+    }
+}
+.btn-weak-invert {
+    @include state-weak;
+    @include svg-in-button-invert;
+    background: $color-system-invert-4-weak;
+    color: $color-system-invert-1-full;
+    &:hover {
+        background: $color-system-invert-3-dim;
+    }
+}
+.button-icon {
+    padding: 0 0.5rem;
+}

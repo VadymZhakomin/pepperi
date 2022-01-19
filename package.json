@@ -1,0 +1,53 @@
+{
+  "name": "pepperi",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Yehor Kuzkov",
+  "main": "src/main.js",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache-files": "^0.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "pump": "^2.0.1"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "gulp-imagemin": "^7.1.0",
+    "normalize.css": "^8.0.1"
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "Pepperi"
+      }
+    }
+  }
+}

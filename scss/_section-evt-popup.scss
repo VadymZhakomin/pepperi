@@ -1,0 +1,39 @@
+.popup-events
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+<<<<<<< Updated upstream
+    height: 3rem;
+=======
+    background-color: #5d8009;
+    //height: 3rem;
+    //padding: 0.75rem;
+>>>>>>> Stashed changes
+
+    &__carousel__slide
+    {   
+        display: flex;
+        padding: 0.75rem;
+        width: 100%;
+        background-color: $color-green-main;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.popup-events__carousel__slide__caption
+{
+    color: white;
+    font-family: var(--font-family--body);
+    font-weight: var(--font-weight--normal);
+    font-size: 1rem;
+}
+
+.popup-events__carousel__slide__link
+{
+    color: white;
+    font-family: var(--font-family--body);
+    font-weight: var(--font-weight--normal);
+    text-decoration: underline;
+    font-size: 1rem;
+}

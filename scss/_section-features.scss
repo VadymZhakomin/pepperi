@@ -1,0 +1,212 @@
+.features-section {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: white;
+  @media screen and (max-width: 976px) {
+    padding: 0 24px;
+  }
+  @media screen and (max-width: 960px) {
+    padding: 0;
+  }
+  &__navigation {
+    display: flex;
+    height: 5rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0.75rem;
+      //height: 0.2rem;
+      
+    }
+    
+    &::-webkit-scrollbar-track {
+      
+      background: #f6f6f6;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #cdcdcd;
+      border-radius: 0.25rem;
+      border: 1px;
+    }
+  }
+
+  &__carousel
+  {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__navbar {
+    display: flex;
+<<<<<<< Updated upstream
+    //justify-content: space-between;
+=======
+    justify-content: space-around;
+    overflow: initial;
+>>>>>>> Stashed changes
+    align-items: center;
+    //width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.2);
+<<<<<<< Updated upstream
+    overflow: initial;
+
+=======
+    overflow: auto;
+    @media screen and (max-width: 1040px) {
+      justify-content: unset;
+    }
+>>>>>>> Stashed changes
+  
+
+    & li {
+      display: flex;
+      align-items: center;
+      height: inherit;
+      padding: 0 1rem 0 1rem;
+
+      & a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: rgba(26, 26, 26, 0.7);
+        font-family: var(--font-family--body);
+        font-size: 0.75rem;
+        font-weight: normal;
+        letter-spacing: 0.11px;
+        text-decoration: none;
+        cursor: pointer;
+        height: 50%;
+        padding-top: 0.75rem;
+        span {
+          white-space: nowrap;
+        }
+      }
+      &.active {
+        border-bottom: 4px solid $color-green-main;
+        & a {
+          font-weight: var(--font-weight--bold);
+        }
+      }
+    }
+  }
+
+  &__carousel-slide {
+    display: flex;
+    width: 100%;
+    
+    align-items: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
+    &__content-left {
+      display: flex;
+      flex-direction: column;
+      height: inherit;
+      width: 45%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      @media screen and (max-width: 960px) {
+        width: 100%;
+        max-width: 640px;
+        //padding: 0;
+      }
+    }
+
+    &__content-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 55%;
+      height: inherit;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      
+      @media screen and (max-width: 960px) {
+        width: 100%;
+        max-width: 327px;
+        padding: 0;
+      }
+      & img {
+        width: 100%;
+        border-radius: 0.25rem;
+      };
+    }
+
+    &__content-header {
+      color: $color-green-main;
+      font-family: var(--font-family--title);
+      font-style: normal;
+      font-size: 2rem;
+      font-weight: var(--font-weight--heavy-title);
+      letter-spacing: 1.67px;
+      width: 100%;
+      @media screen and (max-width: 960px) {
+        font-size: 28px;
+      }
+    }
+
+    &__content-subheading {
+      color: $color-primary;
+      font-family: var(--font-family--body);
+      font-size: 1.125rem;
+      font-weight: var(--font-weight--bold);
+      letter-spacing: 0.16px;
+      line-height: 1.75rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      @media screen and (max-width: 960px) {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    &__content-bullets {
+      list-style: inside;
+      font-family: var(--font-family--body);
+      font-style: normal;
+      font-weight: var(--font-weight--normal);
+      font-size: 1.125rem;
+      letter-spacing: 0.16px;
+      line-height: 28px;
+      //max-width: 30rem;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      & li {
+        list-style-position: outside;
+        margin-top: 0.5rem;
+      }
+    }
+
+    &__content-cta-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__content-cta-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      text-align: center;
+      color: $color-primary;
+      
+      margin: 2rem 0 2rem 0;
+      background: rgb(255, 255, 255);
+      border-radius: 26px;
+      border: 1px solid rgb(51, 51, 51);
+      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+      width: 300px;
+      & span
+      {
+        padding: 1.125rem 1rem 1.125rem 1rem;
+      }
+    }
+  }
+}
