@@ -1,7 +1,36 @@
 @import "./vars";
 
-.hero-section__header {
+.hero-section {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        &__header {
+            h1 {
+                color: $color-green-main;
+                font-weight: 800;
+                font-size: var(--font-size-7-Xlarge);
+            }
+
+            a {
+                background-color: #fe5000 !important;
+                color: white !important;
+                border: none;
+            }
+        }
+    }
+}
+
+.client-side {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    // color: $color-green-main;
+    justify-content: space-around;
+
+    div {
+        p {
+            text-align: start;
+        }
+    }
 }
