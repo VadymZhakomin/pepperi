@@ -1,0 +1,28 @@
+@import "./vars";
+
+.info_block__color_bg {
+    background-color: $color-info-block;
+    color: white;
+
+    h2,
+    h3 {
+        color: white;
+    }
+
+    .customers-section__content-cta-btn {
+        background-color: #fe5000;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .content_img_wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .content_img_block {
+            background-color: rgb(117, 127, 152);
+            width: 10rem;
+        }
+    }
+}

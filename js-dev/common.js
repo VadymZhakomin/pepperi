@@ -1,7 +1,6 @@
 "use strict";
+let videoIdProd = "zkw20qafik"; //n0oifrp00n
 jQuery(document).ready(function () {
-<<<<<<< Updated upstream
-=======
   window._wq = window._wq || [];
   $(".video-overlay").click(function () {
     _wq.push({
@@ -76,7 +75,6 @@ jQuery(document).ready(function () {
     }),
   
 
->>>>>>> Stashed changes
   $("#features-section-carousel").owlCarousel({
     items: 1,
     loop: !1,
@@ -104,15 +102,9 @@ jQuery(document).ready(function () {
       margin: 16,
       autoplay: true,
       slideTransition: "linear",
-<<<<<<< Updated upstream
-      autoplaySpeed: 6000,
-      smartSpeed: 6000,
-      autoWidth:true,
-=======
       autoplaySpeed: 3000,
       smartSpeed: 3000,
       autoWidth: true,
->>>>>>> Stashed changes
       responsive: {
         0: { items: 4.5 },
         375: { items: 5.5 },
@@ -125,18 +117,10 @@ jQuery(document).ready(function () {
     $("#integrations-section__carousel").trigger("play.owl.autoplay", [1000]);
     $("#customer-section-carousel").trigger("play.owl.autoplay", [1000]);
 
-<<<<<<< Updated upstream
-    $("#integrations-section__carousel").trigger('play.owl.autoplay',[1000]);
-
-    function setSpeed(){
-        $("#integrations-section__carousel").trigger('play.owl.autoplay',[6000]);
-    }
-=======
   function setSpeed() {
     $("#integrations-section__carousel").trigger("play.owl.autoplay", [3000]);
     $("#customer-section-carousel").trigger("play.owl.autoplay", [3000]);
   }
->>>>>>> Stashed changes
 
   setTimeout(setSpeed, 1000);
 
