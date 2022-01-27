@@ -15,9 +15,15 @@
             color: $color-green-main;
             font-weight: 800;
             font-size: var(--font-size-7-Xlarge);
+
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+            }
         }
 
         a {
+            font-weight: var(--font-weight--bold);
+            font-size: var(--font-size-4-bigger);
             background-color: #fe5000 !important;
             color: white !important;
             border: none;
