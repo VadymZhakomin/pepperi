@@ -4,174 +4,159 @@
 // Typography style - This file contains all @font-face declarations, if any.
 // ----------font-size---------------------------------------------------------------------
 
-@import url("../fonts/inter/inter.css");
-@import url("../fonts/nexa/nexa.css");
+//@import url("../fonts/inter/inter.css");
+//@import url("../fonts/nexa/nexa.css");
 
 * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 //! Text Size
 :root {
-    --font-family--body: "Inter var", -apple-system, system-ui,
-        BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    --font-family--title: "Nexa", sans-serif;
-    --font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
+	--font-family--body: "Inter var", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	--font-family--title: "Nexa", sans-serif;
+	--font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
+	--font-weight--thin: 300;
+	--font-weight--normal: 400;
+	--font-weight--bold: 600;
+	--font-weight--heavy-title: 800;
+	--font-weight--bolder: 900;
 
-    --font-weight--thin:300;
-    --font-weight--normal: 400;
-    --font-weight--bold: 600;
-    --font-weight--heavy-title: 800;
-    --font-weight--bolder: 900;
+	--font-size-base: 16px;
+	@include mQ-max($screen-md) {
+		// --font-size-base: 14px;
+	}
+	@include mQ-max($screen-sm) {
+		// --font-size-base: 14px;
+	}
 
-    --font-size-base: 16px;
-    @include mQ-max($screen-md) {
-        --font-size-base: 15px;
-    }
-    @include mQ-max($screen-sm) {
-        --font-size-base: 14px;
-    }
-
-    --font-size-0-smaller: 0.75rem;
-    --font-size-1-small: 0.875rem;
-    --font-size-2-regular: 1rem;
-    --font-size-3-big: 1.125rem;
-    --font-size-4-bigger: 1.25rem;
-    --font-size-5-large: 1.5rem;
-    --font-size-6-Xlarge: 2rem;
-    --font-size-7-Xlarge: 2.5rem;
-    --font-size-8-Xlarge: 3rem;
+	--font-size-0-smaller: 0.75rem;
+	--font-size-1-small: 0.875rem;
+	--font-size-2-regular: 1rem;
+	--font-size-3-big: 1.125rem;
+	--font-size-4-bigger: 1.25rem;
+	--font-size-5-large: 1.5rem;
+	--font-size-6-Xlarge: 2rem;
+	--font-size-7-Xlarge: 2.5rem;
+	--font-size-8-Xlarge: 3rem;
 }
 
 @supports (font-variation-settings: normal) {
-    html,
-    body {
-        font-family: "Inter var", sans-serif;
-    }
+	html,
+	body {
+		font-family: "Inter var", sans-serif;
+	}
 }
 
-<<<<<<< Updated upstream
-.wrapper-customers {
-    color: $color-system-1-full;
-    font-family: var(--font-family--body);
-    font-weight: var(--font-weight--normal);
-    font-size: var(--font-size-base);
-    line-height: 1.4;
-    letter-spacing: 0.025em;
-    cursor: default;
-    font-kerning: normal;
-    font-feature-settings: "kern" 1, "frac" 1, "ss01" 1, "cv08" 1, "cv11" 1;
-}
-=======
->>>>>>> Stashed changes
 
 //  Font weight
 // ------------------------
-.wrapper-customers {
-    strong,
-    .bold {
-        font-weight: var(--font-weight--bold) !important;
-    }
-    .bolder {
-        font-weight: var(--font-weight--bolder) !important;
-    }
-    .dimmed {
-        opacity: 0.7;
-    }
-    .smaller {
-        font-size: 80%;
-    }
+body {
+	strong,
+	.bold {
+		font-weight: var(--font-weight--bold) !important;
+	}
+	.bolder {
+		font-weight: var(--font-weight--bolder) !important;
+	}
+	.dimmed {
+		opacity: 0.7;
+	}
+	.smaller {
+		font-size: 80%;
+	}
 
-    h6,
-    h5,
-    h4,
-    h3,
-    h2,
-    h1 {
-        font-family: var(--font-family--title);
-        line-height: 1.15;
-        color: rgb(26, 26, 26);
-    }
-    p,
-    a,
-    button {
-        font-family: var(--font-family--body);
-    }
-    p {
-        font-size: var(--font-size-2-regular);
-        line-height: 1.5;
-    }
+	h6,
+	h5,
+	h4,
+	h3,
+	h2,
+	h1 {
+		font-family: var(--font-family--title);
+		line-height: 1.15;
+		color: rgb(26, 26, 26);
+		letter-spacing: 0.01em;
+	}
+	p,
+	a,
+	button {
+		font-family: var(--font-family--body);
+	}
+	p {
+		font-size: var(--font-size-2-regular);
+		line-height: 1.5;
+	}
 
-    a {
-        text-decoration: none;
-        color: $color-link;
-        cursor: pointer;
-        &.disable,
-        &:disabled {
-            pointer-events: none;
-        }
-    }
+	a {
+		text-decoration: none;
+		color: $color-link;
+		cursor: pointer;
+		&.disable,
+		&:disabled {
+			pointer-events: none;
+		}
+	}
 
-    .title-1-xs {
-        font-weight: 600;
-        font-size: var(--font-size-2-regular);
-    }
-    .title-2-sm {
-        font-weight: 600;
-        font-size: var(--font-size-3-big);
-    }
-    .title-4-lg {
-        font-weight: 700;
-        font-size: var(--font-size-7-Xlarge);
-        color: white;
-        line-height: 1.1em;
-        @media screen and (max-width: $screen-lg) {
-            font-size: var(--font-size-6-Xlarge);
-        }
-        @media screen and (max-width: $screen-sm) {
-            font-size: var(--font-size-7-Xlarge);
-        }
-    }
+	.title-1-xs {
+		font-weight: 600;
+		font-size: var(--font-size-2-regular);
+	}
+	.title-2-sm {
+		font-weight: 600;
+		font-size: var(--font-size-3-big);
+	}
+	.title-4-lg {
+		font-weight: 700;
+		font-size: var(--font-size-7-Xlarge);
+		color: white;
+		line-height: 1.1em;
+		@media screen and (max-width: $screen-lg) {
+			font-size: var(--font-size-6-Xlarge);
+		}
+		@media screen and (max-width: $screen-sm) {
+			font-size: var(--font-size-7-Xlarge);
+		}
+	}
 
-    .body-2xs {
-        font-size: var(--font-size-0-smaller);
-    }
-    .body-xs {
-        font-size: var(--font-size-1-small);
-    }
-    .body-sm {
-        font-size: var(--font-size-3-big);
-    }
-    .body-md {
-        font-size: var(--font-size-4-bigger);
-    }
-    .body-lg {
-        font-size: var(--font-size-5-large);
-    }
-    .body-xl {
-        font-size: var(--font-size-6-Xlarge);
-    }
-    .body-2xl {
-        font-size: var(--font-size-7-Xlarge);
-    }
+	.body-2xs {
+		font-size: var(--font-size-0-smaller);
+	}
+	.body-xs {
+		font-size: var(--font-size-1-small);
+	}
+	.body-sm {
+		font-size: var(--font-size-3-big);
+	}
+	.body-md {
+		font-size: var(--font-size-4-bigger);
+	}
+	.body-lg {
+		font-size: var(--font-size-5-large);
+	}
+	.body-xl {
+		font-size: var(--font-size-6-Xlarge);
+	}
+	.body-2xl {
+		font-size: var(--font-size-7-Xlarge);
+	}
 
-    // .title-xs {
-    //     font-size: 16px;
-    // }
-    // .title-sm {
-    //     font-size: 20px;
-    // }
-    // .title-md {
-    //     font-size: 24px;
-    // }
-    // .title-lg {
-    //     font-size: 28px;
-    // }
-    // .title-xl {
-    //     font-size: 32px;
-    // }
-    // .title-2xl {
-    //     font-size: 40px;
-    // }
+	// .title-xs {
+	//     font-size: 16px;
+	// }
+	// .title-sm {
+	//     font-size: 20px;
+	// }
+	// .title-md {
+	//     font-size: 24px;
+	// }
+	// .title-lg {
+	//     font-size: 28px;
+	// }
+	// .title-xl {
+	//     font-size: 32px;
+	// }
+	// .title-2xl {
+	//     font-size: 40px;
+	// }
 }

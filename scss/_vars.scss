@@ -1,5 +1,3 @@
-
-
 //! Layouts
 $screen-2xl: 1464px;
 $screen-xl: 1280px;
@@ -41,32 +39,27 @@ $screen-xs: 480px;
 @mixin main-padding {
     padding-left: calc(max(4rem, env(safe-area-inset-left)));
     padding-right: calc(max(4rem, env(safe-area-inset-right)));
-    @include mQ-max ($screen-md) {
+    @include mQ-max($screen-md) {
         padding-left: calc(max(3rem, env(safe-area-inset-left)));
         padding-right: calc(max(3rem, env(safe-area-inset-right)));
     }
-    @include mQ-max ($screen-sm) {
+    @include mQ-max($screen-sm) {
         padding-left: calc(max(2rem, env(safe-area-inset-left)));
         padding-right: calc(max(2rem, env(safe-area-inset-right)));
     }
-    @include mQ-max ($screen-xs) {
+    @include mQ-max($screen-xs) {
         padding-left: calc(max(1rem, env(safe-area-inset-left)));
         padding-right: calc(max(1rem, env(safe-area-inset-right)));
     }
 }
 
 //! Shadows
-$shadow-box-focus-hover: 0 0 0 4px rgba(23, 102, 166, 0.25),
-    00 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06),
-    0 8px 16px rgba(0, 0, 0, 0.08);
+$shadow-box-focus-hover: 0 0 0 4px rgba(23, 102, 166, 0.25), 00 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06), 0 8px 16px rgba(0, 0, 0, 0.08);
 $shadow-box-focus: 0 0 0 4px rgba(23, 102, 166, 0.25);
 $shadow-box-soft: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04);
-$shadow-box-soft-hover: 0 2px 4px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.08);
-$shadow-box: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.08);
-$shadow-box-hover: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.12),
-    0 8px 16px rgba(0, 0, 0, 0.16);
+$shadow-box-soft-hover: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.08);
+$shadow-box: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.08);
+$shadow-box-hover: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.16);
 
 //! Colors
 $color-system-1-full: rgb(10, 10, 10);
@@ -80,6 +73,7 @@ $color-system-invert-3-dim: rgba(256, 256, 256, 0.25);
 $color-system-invert-4-weak: rgba(256, 256, 256, 0.08);
 
 $color-primary: #1a1a1a;
+$color-primary-invert: #fff;
 $color-success: green;
 $color-caution: red;
 $color-link: #1766a6;
@@ -87,6 +81,7 @@ $color-brand: #93c90e;
 $color-green-main: #5d8009;
 $color-brand-50: transparentize($color-brand, 0.75);
 $color-brand-25: transparentize($color-brand, 0.84);
+$color-info-block: rgb(52, 64, 85);
 
 :root {
     --color-main-bg: #f7f7f7;
@@ -155,8 +150,7 @@ $box-height-overlay: 40px;
 @mixin state-weak-invert {
     background-color: $color-system-invert-3-dim;
     border-radius: $border-radius;
-    transition: background-color ease-in-out 0.25s,
-        box-shadow ease-in-out 0.125s;
+    transition: background-color ease-in-out 0.25s, box-shadow ease-in-out 0.125s;
     &:hover {
         background-color: $color-system-invert-2-dimmed;
     }
@@ -213,14 +207,14 @@ $box-height-overlay: 40px;
         display: none !important;
     }
 }
-@mixin flex($justify:flex-start, $align:flex-start, $wrap:nowrap, $direction:row) {
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap, $direction: row) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
     flex-direction: $direction;
 }
-@mixin bg($size:cover, $repeat:no-repeat, $position:center) {
+@mixin bg($size: cover, $repeat: no-repeat, $position: center) {
     background-size: $size;
     background-position: $position;
     background-repeat: $repeat;

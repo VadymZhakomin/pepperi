@@ -1,173 +1,173 @@
 @import "./vars";
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
+// html,
+// body,
+// div,
+// span,
+// applet,
+// object,
+// iframe,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
+// blockquote,
+// pre,
+// a,
+// abbr,
+// acronym,
+// address,
+// big,
+// cite,
+// code,
+// del,
+// dfn,
+// em,
+// img,
+// ins,
+// kbd,
+// q,
+// s,
+// samp,
+// small,
+// strike,
+// strong,
+// sub,
+// sup,
+// tt,
+// var,
+// b,
+// u,
+// i,
+// center,
+// dl,
+// dt,
+// dd,
+// ol,
+// ul,
+// li,
+// fieldset,
+// form,
+// label,
+// legend,
+// table,
+// caption,
+// tbody,
+// tfoot,
+// thead,
+// tr,
+// th,
+// td,
+// article,
+// aside,
+// canvas,
+// details,
+// embed,
+// figure,
+// figcaption,
+// footer,
+// header,
+// hgroup,
+// menu,
+// nav,
+// output,
+// ruby,
+// section,
+// summary,
+// time,
+// mark,
+// audio,
+// video {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   font-size: 100%;
+//   font: inherit;
+//   vertical-align: baseline;
+// }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
+// /* HTML5 display-role reset for older browsers */
+// article,
+// aside,
+// details,
+// figcaption,
+// figure,
+// footer,
+// header,
+// hgroup,
+// menu,
+// nav,
+// section {
+//   display: block;
+// }
 
 
 
-ol,
-ul {
-  list-style: none;
-}
+// ol,
+// ul {
+//   list-style: none;
+// }
 
-blockquote,
-q {
-  quotes: none;
-}
+// blockquote,
+// q {
+//   quotes: none;
+// }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
+// blockquote:before,
+// blockquote:after,
+// q:before,
+// q:after {
+//   content: "";
+//   content: none;
+// }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+// table {
+//   border-collapse: collapse;
+//   border-spacing: 0;
+// }
 
-button,
-button:active,
-button:focus {
-  outline: none !important;
-  border: none;
-  cursor: pointer;
-}
+// button,
+// button:active,
+// button:focus {
+//   outline: none !important;
+//   border: none;
+//   cursor: pointer;
+// }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// * {
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
-@media screen and (max-width: 768px) {
-  body {
-    --font-size-base: 15px;
-  }
-  html
-  {
-    font-size: 15px !important;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   body {
+//     --font-size-base: 15px;
+//   }
+//   html
+//   {
+//     font-size: 15px !important;
+//   }
+// }
 
-@media screen and (max-width: 576px) {
-  body {
-    --font-size-base: 12px;
-  }
-  html
-  {
-    font-size: 12px !important;
-  }
-}
+// @media screen and (max-width: 576px) {
+//   body {
+//     --font-size-base: 12px;
+//   }
+//   html
+//   {
+//     font-size: 12px !important;
+//   }
+// }
 
-@supports (font-variation-settings: normal) {
-  html,
-  body {
-    font-family: "Inter var", sans-serif;
-  }
-}
+// @supports (font-variation-settings: normal) {
+//   html,
+//   body {
+//     font-family: "Inter var", sans-serif;
+//   }
+// }
 
 .wrapper-customers {
   color: #0a0a0a;
@@ -785,43 +785,54 @@ body {
 
 .wrapper-customers .filter-btns {
   margin: 1rem 0;
+  overflow-x: auto;
 }
+
+.filter-btns{
+  &::-webkit-scrollbar {
+  width: 1rem;
+  height: 0.5rem;
+}
+&::-webkit-scrollbar-track {
+  background: transparent;
+}
+&::-webkit-scrollbar-thumb {
+  background-color: rgba(10,10,10,0.12);
+  border-radius: 0.25rem;
+  border: 1px;
+}
+
+}
+
 
 @media screen and (max-width: 576px) {
   .wrapper-customers .filter-btns {
     margin: 0;
-    height: 3.5rem;
+    //height: 3.5rem;
   }
 }
 
-.wrapper-customers .filter-btns #myBtnContainer {
+#myBtnContainer {
   max-width: 40rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-@media screen and (max-width: 576px) {
-  .wrapper-customers .filter-btns #myBtnContainer {
-    height: 3.5rem;
-    padding-left: 2rem;
-    position: absolute;
-    max-width: 100%;
-    overflow-y: scroll;
-    left: 0;
-    right: 0;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .wrapper-customers .filter-btns #myBtnContainer {
+  flex-wrap: wrap;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  left: 0;
+  right: 0;
+  @media screen and (max-width: 480px) {
     padding-left: 1rem;
   }
+  @media screen and (max-width: 576px) {
+       max-width: 100%;
+       flex-wrap: nowrap;
+   }
+   
 }
+
+
+
+
 
 .wrapper-customers .card-list {
   padding-bottom: 1rem;
@@ -999,6 +1010,7 @@ body {
 
 .wrapper-customers .company-buttons button {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .wrapper-customers .data-tag-container {
@@ -1013,6 +1025,8 @@ body {
   overflow-x: none;
 }
 
+
+
 /* Works on Chrome, Edge, and Safari */
 .data-tag-container::-webkit-scrollbar {
   width: 1rem;
@@ -1024,7 +1038,7 @@ body {
 }
 
 .data-tag-container::-webkit-scrollbar-thumb {
-  background-color: #f7f7f7;
+  background-color: rgba(10,10,10,0.12);
   border-radius: 0.25rem;
   border: 1px;
 }
@@ -1060,6 +1074,7 @@ body {
 
 .customer-page-modal-fade
 {
+  background:rgba(26,26,26, 0.8);
   transition: opacity .15s linear;
 }
 
@@ -1095,7 +1110,8 @@ body {
   position: relative;
     display: block;
     width: 100%;
-    padding: 0;
+    height: 0;
+    padding-bottom: 56.25%;
     overflow: hidden;
 }
 

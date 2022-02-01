@@ -1,0 +1,63 @@
+@import "./vars";
+
+.hero-section {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__header {
+        h1 {
+            color: $color-green-main;
+            font-weight: 800;
+            font-size: var(--font-size-7-Xlarge);
+
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+            }
+        }
+
+        a {
+            font-weight: var(--font-weight--bold);
+            font-size: var(--font-size-4-bigger);
+            background-color: #fe5000 !important;
+            color: white !important;
+            border: none;
+        }
+    }
+    &__img {
+        height: 30rem;
+        max-width: 100vw;
+    }
+}
+.img-box {
+    max-width: 100vw;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+.client-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    div {
+        p {
+            text-align: start;
+
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+            }
+        }
+    }
+}

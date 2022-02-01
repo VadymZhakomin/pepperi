@@ -1,7 +1,9 @@
 @import "./reset";
-@import "./typography"; 
+@import "./typography";
 @import "./commons";
-@import "./page-customers";  
+@import "./page-customers";
+@import "./page-integration";
+@import "./page-iPaaS";
 @import "./section-evt-popup";
 @import "./section-hero";
 @import "./section-customers";
@@ -12,26 +14,22 @@
 @import "./section-success";
 @import "./animations";
 
-
 #sidr-main {
     display: none;
 }
-.solution__simple-menu
-{
-margin-top: 2rem;
+.solution__simple-menu {
+    margin-top: 2rem;
 }
-html
-{
-
-@media screen and (max-width: 1170px) {
-    font-size: 14px;
-}
-@media screen and (max-width: 768px) {
-    font-size: 14px;
-}
-@media screen and (max-width: 444px) {
-    font-size: 14px;
-}
+html {
+    @media screen and (max-width: 1170px) {
+        font-size: 14px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+    @media screen and (max-width: 444px) {
+        font-size: 14px;
+    }
 }
 
 * {
@@ -47,49 +45,47 @@ html
     padding-right: 100px;
     padding-left: 100px;
 
-&__btn-nav-left {
-    transition: box-shadow ease-out 0.3s, transform ease-in-out 0.4s;
-    background: rgba(255, 255, 255, 1);
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 123;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
-    @media screen and (max-width: 960px) {
-        width: 48px;
-        height: 48px;
+    &__btn-nav-left {
+        transition: box-shadow ease-out 0.3s, transform ease-in-out 0.4s;
+        background: rgba(255, 255, 255, 1);
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 123;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+        @media screen and (max-width: 960px) {
+            width: 48px;
+            height: 48px;
+        }
+        &:hover {
+            transform: translateY(-0.1em);
+        }
     }
-    &:hover
-    {
-        transform: translateY(-.1em)
-    }
-}
 
-  &__btn-nav-right {
-    transition: box-shadow ease-out 0.3s, transform ease-in-out 0.4s;
-    background: rgba(255, 255, 255, 1);
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 123;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
-    @media screen and (max-width: 960px) {
-        width: 48px;
-        height: 48px;
+    &__btn-nav-right {
+        transition: box-shadow ease-out 0.3s, transform ease-in-out 0.4s;
+        background: rgba(255, 255, 255, 1);
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 123;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+        @media screen and (max-width: 960px) {
+            width: 48px;
+            height: 48px;
+        }
+        &:hover {
+            transform: translateY(-0.1em);
+        }
     }
-    &:hover
-    {
-        transform: translateY(-.1em)
-    }
-  }
 }
 
 .container {
@@ -98,11 +94,9 @@ html
     margin: 0 min(4rem);
     @media screen and (max-width: 1200px) {
         margin: 0 3rem;
-        
     }
     @media screen and (min-width: 1410px) {
         margin: 0 auto;
-        
     }
 }
 
@@ -110,7 +104,7 @@ html
     border: 1px solid #000;
     padding: 10px 16px;
     border-radius: 20px;
-    transition: .5s;
+    transition: 0.5s;
     cursor: pointer;
     outline: none;
     text-decoration: none;
@@ -126,8 +120,8 @@ html
         height: auto;
     }
     &--silver {
-        background: rgba(26, 26, 26, .08);
-        border: 1px solid rgba(26, 26, 26, .08);
+        background: rgba(26, 26, 26, 0.08);
+        border: 1px solid rgba(26, 26, 26, 0.08);
         height: 40px;
         &:hover,
         &:active,
@@ -158,7 +152,6 @@ html
 .dropdown {
     position: relative;
     &__controller {
-
     }
     &__menu {
         position: absolute;
@@ -172,18 +165,18 @@ html
         &.active {
             width: 100%;
             height: 100vh;
-            background: rgba(26, 26, 26, .5);
+            background: rgba(26, 26, 26, 0.5);
             position: fixed;
             top: 0;
             left: 0;
             z-index: 749;
-        }   
+        }
     }
 }
 .mob-header {
     background-color: #fff;
     padding: 20px 0;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.04);   
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.04);
     @media screen and (min-width: 976px) {
         display: none;
     }
@@ -198,8 +191,7 @@ html
                 height: auto;
             }
         }
-        .toggle-menu
-        {
+        .toggle-menu {
             border-radius: 0.25rem;
             width: 40px;
             height: 40px;
@@ -224,36 +216,35 @@ html
         .close-menu-parent {
             display: none;
         }
-        a, button {
+        a,
+        button {
             color: rgb(26, 26, 26);
             font-family: var(--font-family--body);
             font-size: 0.875rem;
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 8px;
             font-weight: 600;
             @include flex(flex-start, center, nowrap, row);
             letter-spacing: 0.12px;
             line-height: 1;
             position: relative;
             svg {
-                transform: scale(0.8);
-                margin-left: 5px;
+                transform: scale(0.7);
+                //margin-left: 5px;
                 path {
-                    transition: .5s;
+                    transition: 0.5s;
                 }
             }
             &:hover,
             &.active {
                 @media screen and (max-width: 976px) {
                     color: rgb(26, 26, 26);
-                    
                 }
                 color: rgb(93, 128, 9);
                 svg {
                     path {
                         @media screen and (max-width: 976px) {
                             fill: rgb(26, 26, 26);
-                            
                         }
                         fill: rgb(93, 128, 9);
                     }
@@ -274,12 +265,12 @@ html
                 position: relative;
                 background-color: transparent;
                 &:before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     z-index: 5;
-                    transition: .5s;
+                    transition: 0.5s;
                     background: rgb(93, 128, 9);
                     border-radius: 1px;
                     height: 2px;
@@ -290,7 +281,6 @@ html
                     &:before {
                         @media screen and (max-width: 976px) {
                             opacity: 0;
-                            
                         }
                         opacity: 1;
                     }
@@ -337,7 +327,7 @@ html
             max-width: 300px;
             z-index: 750;
             width: 100%;
-            padding: 12px 8px;
+            //padding: 20px 0;
             display: inline-block;
             background-color: #fff;
             .header__content {
@@ -347,11 +337,12 @@ html
             .header__left-menu {
                 @include flex(center, center, nowrap, column);
                 width: 100%;
-                a, button {
+                a,
+                button {
                     font-size: 1rem;
                     width: 100%;
                     border-bottom: 1px solid #000;
-                    padding: 12px 8px;
+                    padding: 8px;
                     @include flex(space-between, center, nowrap, row);
                     margin-bottom: 12px;
                     svg {
@@ -368,7 +359,7 @@ html
                         width: 40px;
                         height: 40px;
                         padding: 0;
-                        background: rgba(26, 26, 26, .08);
+                        background: rgba(26, 26, 26, 0.08);
                         border-radius: 4px;
                         border: none;
                         @include flex(center, center, nowrap, row);
@@ -530,7 +521,6 @@ html
             }
         }
     }
-   
 }
 .modules-menu {
     display: grid;
@@ -545,14 +535,13 @@ html
         @include flex(flex-start, center, nowrap, row);
         //padding: 12px;
         border-radius: 4px;
-        transition: .5s;
+        transition: 0.5s;
         @media screen and (max-width: 970px) {
-            border-bottom: 0!important;
-            margin-bottom: 0!important;
-
+            border-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
         &:hover {
-            background-color: rgba(#78aa00, .12);
+            background-color: rgba(#78aa00, 0.12);
         }
         &__img {
             margin-right: 15px;
@@ -585,7 +574,8 @@ html
 .industries {
     background: rgb(255, 255, 255);
     border-radius: 4px;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08), 0px 32px 64px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08),
+        0px 32px 64px 0px rgba(0, 0, 0, 0.06);
     width: 631px;
     padding: 40px;
     display: grid;
@@ -605,11 +595,11 @@ html
         padding: 8px;
         border-radius: 4px;
         background: #fff;
-        transition: .5s;
+        transition: 0.5s;
         @include flex(flex-start, center, nowrap, row);
         @media screen and (max-width: 970px) {
-            border-bottom: 0!important;
-            margin-bottom: 0!important;
+            border-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
         .img {
             width: 40px;
@@ -641,7 +631,7 @@ html
             }
         }
         &:hover {
-            background: rgba(#78aa00, .12);
+            background: rgba(#78aa00, 0.12);
         }
     }
     &__img {
@@ -651,12 +641,8 @@ html
 .company-menu {
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 8px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 16px 0px rgba(0, 0, 0, 0.08),
-    0px 12px 24px 0px rgba(0, 0, 0, 0.12),
-    0px 24px 48px 0px rgba(0, 0, 0, 0.08),
-    0px 32px 64px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08),
+        0px 32px 64px 0px rgba(0, 0, 0, 0.06);
     width: 432px;
     background-size: 236px;
     background-repeat: no-repeat;
@@ -673,7 +659,7 @@ html
         }
     }
     &__overlay {
-        background-color: rgba(93, 128, 9, .06);
+        background-color: rgba(93, 128, 9, 0.06);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 48px;
@@ -696,7 +682,7 @@ html
         line-height: 1.5rem;
         margin-bottom: 1.5rem;
         padding-bottom: 12px;
-        border-bottom: 1px solid rgba(#000, .24);
+        border-bottom: 1px solid rgba(#000, 0.24);
     }
     a {
         color: rgb(26, 26, 26);
@@ -707,8 +693,8 @@ html
         padding: 0;
         margin-bottom: 0.75rem;
         @media screen and (max-width: 970px) {
-            padding: 0!important;
-            border: none!important;
+            padding: 0 !important;
+            border: none !important;
         }
     }
 }
@@ -717,7 +703,8 @@ html
     max-width: 1024px;
     @include flex(flex-start, stretch, nowrap, row);
     background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08), 0px 32px 64px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08),
+        0px 32px 64px 0px rgba(0, 0, 0, 0.06);
     border-radius: 4px;
     &__white-menu {
         width: calc(100% - 416px);
@@ -735,12 +722,12 @@ html
         margin-bottom: 1.25rem;
         line-height: 1.5rem;
         padding-bottom: 12px;
-        border-bottom: 1px solid rgba(#000, .24);
+        border-bottom: 1px solid rgba(#000, 0.24);
     }
     &__green-menu {
         width: 416px;
         padding: 32px;
-        background-color: rgba(#5d8009, .06);
+        background-color: rgba(#5d8009, 0.06);
         display: grid;
         gap: 32px;
         grid-template-columns: 1fr 1fr;
@@ -759,7 +746,6 @@ html
         }
         @media screen and (max-width: 976px) {
             background-image: unset !important;
-            
         }
         @media screen and (max-width: 1200px) {
             background-size: calc(10% + (745px - 46vw));
@@ -771,33 +757,34 @@ html
 }
 .menu-step-back {
     @media screen and (min-width: 971px) {
-        display: none!important;
+        display: none !important;
     }
 }
 .breadcrumbs {
     @include flex(flex-start, center, nowrap, row);
     li {
         &:after {
-            content: '>';
+            content: ">";
         }
     }
 }
 .lang-swicher {
     padding: 24px;
-    width: 200px;
+    //width: 200px;
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08), 0px 32px 64px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 16px 0px rgba(0, 0, 0, 0.08), 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 24px 48px 0px rgba(0, 0, 0, 0.08),
+        0px 32px 64px 0px rgba(0, 0, 0, 0.06);
     &__tiny {
         border-radius: 4px;
-        transition: .5s;
-        padding: 12px;
+        transition: 0.5s;
+        padding: 12px 16px;
         display: grid;
         gap: 8px;
         text-decoration: none;
         grid-template-columns: 1fr 1fr;
         &:hover {
-            background: rgba(89, 89, 89, .2);
+            background: rgba(89, 89, 89, 0.2);
         }
     }
     &__img {
@@ -822,11 +809,11 @@ html
     &__heading {
         @include flex(space-between, center, nowrap, row);
         padding-bottom: 12px;
-        border-bottom: 1px solid rgba(#000, .24);
+        border-bottom: 1px solid rgba(#000, 0.24);
         margin-bottom: 1.5rem;
         width: 100%;
         @media screen and (max-width: 960px) {
-            @include flex(flex-start, flex-start, nowrap, column);           
+            @include flex(flex-start, flex-start, nowrap, column);
         }
         .title {
             color: rgba(26, 26, 26, 0.7);
@@ -836,7 +823,7 @@ html
             letter-spacing: 0.15px;
             line-height: 24px;
             @media screen and (max-width: 960px) {
-                margin-bottom: 2.5rem;         
+                margin-bottom: 2.5rem;
             }
         }
     }
@@ -845,10 +832,9 @@ html
         display: grid;
         gap: 3.5rem;
         grid-template-columns: repeat(5, 1fr);
-        
+
         @media screen and (max-width: 960px) {
-            grid-template-columns: repeat(2, 1fr);     
-                 
+            grid-template-columns: repeat(2, 1fr);
         }
         &-item {
             margin-bottom: 2.5rem;
@@ -857,9 +843,9 @@ html
                 padding: 0;
                 margin: 0;
                 li {
-                    a {                        
+                    a {
                         color: rgb(23, 102, 166);
-                        font-size: .875rem;
+                        font-size: 0.875rem;
                         font-family: var(--font-family--body);
                         font-weight: normal;
                         letter-spacing: 0.12px;
@@ -881,24 +867,24 @@ html
             line-height: 24px;
             padding-bottom: 1rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(#000, .24);
+            border-bottom: 1px solid rgba(#000, 0.24);
         }
     }
 }
 .copyright {
     background-color: #fff;
-    border-top: 1px solid rgba(#000, .24);
+    border-top: 1px solid rgba(#000, 0.24);
     padding-top: 24px;
     padding-bottom: 40px;
     &__content {
         @include flex(space-between, center, nowrap, row);
         @media screen and (max-width: 960px) {
-            @include flex(flex-start, flex-start, nowrap, column);           
+            @include flex(flex-start, flex-start, nowrap, column);
         }
     }
     &__logo {
         @media screen and (max-width: 960px) {
-            margin-bottom: 1.5rem;           
+            margin-bottom: 1.5rem;
         }
         img {
             width: 167px;
@@ -909,7 +895,7 @@ html
         @media screen and (max-width: 960px) {
             flex-direction: column;
             justify-content: flex-start;
-            align-items: flex-start;         
+            align-items: flex-start;
         }
         p {
             color: rgba(26, 26, 26, 0.7);
@@ -919,13 +905,13 @@ html
             letter-spacing: 0.12px;
             line-height: 20px;
             @media screen and (max-width: 960px) {
-                order: 2;          
+                order: 2;
             }
         }
         a {
             color: rgb(23, 102, 166);
             font-size: 0.875rem;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             font-weight: normal;
             text-decoration: none;
             letter-spacing: 0.12px;
@@ -933,8 +919,8 @@ html
             margin-left: 24px;
             @media screen and (max-width: 960px) {
                 margin-left: 0;
-                margin-bottom: 0.75rem;  
-                order: 1;       
+                margin-bottom: 0.75rem;
+                order: 1;
             }
         }
     }
