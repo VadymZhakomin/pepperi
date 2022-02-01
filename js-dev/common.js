@@ -241,8 +241,13 @@ jQuery(document).ready(function () {
     observer.observe(document.querySelector('.features-section'));
    
 
+    
+
    
 });
+
+
+
 
 
 
